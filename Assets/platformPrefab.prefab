@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3237890583710461450}
   - component: {fileID: 3237890583710461453}
   m_Layer: 0
-  m_Name: Platform Prefab
+  m_Name: platformPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3237890583710461446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.003, y: -2.182, z: 0}
+  m_LocalPosition: {x: -0.003, y: -2.182, z: -0.01}
   m_LocalScale: {x: 0.3, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceFactor: 10
+  difficulty: 10
 --- !u!251 &3237890583710461453
 PlatformEffector2D:
   m_ObjectHideFlags: 0
