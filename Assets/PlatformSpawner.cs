@@ -11,27 +11,29 @@ public class PlatformSpawner : MonoBehaviour
     float playerHeight;
     public static int platformCount = 0;
     int platformSpawned = 3;
+    
     //public float spawnerYpos = transform.position.y;
   
     // Start is called before the first frame update
     void Start()
     {
-    //    float _xMin = Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
-    //    float _xMax = Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
-      
+        // _xMin = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
+        // _xMax = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
+        //int heightTracker = (Mathf.Round(playerHeight) % 5);
     }
 
     // Update is called once per frame
     void Update()
     {
+        float randX = Random.Range(-3, 3);
         playerHeight = player.transform.position.y;
         if ((Mathf.Round(playerHeight) % 5) == 0){
             Debug.Log("Hi");
-          //  Instantiate(_platformPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+           //Instantiate(_platformPrefab, new Vector3((Random.Range(-3, 3)), transform.position.y, 0), Quaternion.identity);
 
         }
-        if (platformCount == 3){
-            Instantiate(_platformPrefab, new Vector3((Random.Range(-3, 3)), transform.position.y, 0), Quaternion.identity);
+        if (platformCount == 1){
+            Instantiate(_platformPrefab, new Vector3(randX, transform.position.y, 0), Quaternion.identity);
             platformCount = 0;
         }
     }

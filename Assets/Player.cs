@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float xPos = transform.position.x;
+        // _xMin = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
+        // _xMax = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
+        
     }
 
     void SetTransformX(float n)
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (Input.GetKey(KeyCode.A))
          {
              transform.position = transform.position += transform.right * -moveSpeed * Time.deltaTime;
@@ -41,8 +44,7 @@ public class Player : MonoBehaviour
             SetTransformX(-3.0f);
          }
 
-        //  if (transform.position.x >= 3){
-        //      xPos = -3;        
+             
         
          
 
