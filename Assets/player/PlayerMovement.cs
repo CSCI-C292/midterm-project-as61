@@ -6,18 +6,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
    [SerializeField] public float moveSpeed = 10f;
+   float _xMin;
+   float _xMax;
 
     // Start is called before the first frame update
     void Start()
     {
-        // _xMin = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
-        // _xMax = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
+        _xMin = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
+        _xMax = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
         
     }
 
     void SetTransformX(float n)
     {
-    transform.position = new Vector3(n, transform.position.y, transform.position.z);
+        transform.position = new Vector3(n, transform.position.y, transform.position.z);
     }
 
 
@@ -37,11 +39,11 @@ public class PlayerMovement : MonoBehaviour
              GetComponent<SpriteRenderer>().flipX = false;
          }
 
-         if (transform.position.x < -3){
-            SetTransformX(3.0f);
+         if (transform.position.x < _xMin){
+            SetTransformX(_xMax);
          }
-         if (transform.position.x > 3){
-            SetTransformX(-3.0f);
+         if (transform.position.x > _xMax){
+            SetTransformX(_xMin);
          }
 
              
