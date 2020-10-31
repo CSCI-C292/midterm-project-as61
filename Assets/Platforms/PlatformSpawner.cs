@@ -25,7 +25,7 @@ public class PlatformSpawner : MonoBehaviour
         for (i = 0; i < howMany; i++){
             Instantiate(_platformPrefab, new Vector3(Random.Range(_xMin, _xMax), yPos, 0), Quaternion.identity);
             yPos += distanceBetween;
-            Debug.Log("hi");
+           
         }
       
     }

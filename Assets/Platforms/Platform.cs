@@ -7,7 +7,8 @@ public class Platform : MonoBehaviour
 
     [SerializeField] public float bounceFactor = 10f;
     [SerializeField] public float difficulty = 10f;
-    [SerializeField] GameObject player;
+   // [SerializeField] 
+    GameObject player;
     Animator anim;
     // bool k = false;
     
