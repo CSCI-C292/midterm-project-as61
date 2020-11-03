@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Midterm Project.unity
+- path: Assets/Scenes/Midterm Project.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
