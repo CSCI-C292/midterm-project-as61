@@ -5,6 +5,8 @@ using UnityEngine;
 public class Eagle : MonoBehaviour
 {
     [SerializeField] float bounceFactor;
+    [SerializeField] float moveSpeed;
+    [SerializeField] public float collectorDistanceFromPlayer = -3f;
     GameObject player;
    
 
@@ -42,6 +44,7 @@ public class Eagle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if ((transform.position.y - player.transform.position.y) <= collectorDistanceFromPlayer)
+        Destroy(gameObject);
     }
 }

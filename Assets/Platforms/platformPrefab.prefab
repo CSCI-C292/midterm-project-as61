@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceFactor: 11
-  difficulty: 10
+  collectorDistanceFromPlayer: -4
 --- !u!251 &3237890583710461453
 PlatformEffector2D:
   m_ObjectHideFlags: 0

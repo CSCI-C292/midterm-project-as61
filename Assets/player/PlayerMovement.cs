@@ -5,21 +5,25 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject restartMenu;
    [SerializeField] public float moveSpeed = 10f;
    float _xMin;
    float _xMax;
    Animator anim;
+   Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
+       // restartMenu = GameObject.FindWithTag("RestartMenu");
+        
     }
     void Start()
     {
         _xMin = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
         _xMax = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
-        
+       rb = GetComponent<Rigidbody2D>();
     }
 
     void SetTransformX(float n)
@@ -50,6 +54,17 @@ public class PlayerMovement : MonoBehaviour
          if (transform.position.x > _xMax){
             SetTransformX(_xMin);
          }
+
+        //  if (GameObject.GetComponent<RigidBody>().velocity.y <= -10){
+        //     restartMenu.SetActive(true);
+            
+
+         
+         if (rb.velocity.y <= -20){
+            restartMenu.SetActive(true);
+            Debug.Log("yeah");
+
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

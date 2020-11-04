@@ -23,6 +23,11 @@ PrefabInstance:
       propertyPath: bounceFactor
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3237890583710461450, guid: 9c3cee2e6f01906449a2c41b3c56063b,
+        type: 3}
+      propertyPath: collectorDistanceFromPlayer
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 3237890583710461451, guid: 9c3cee2e6f01906449a2c41b3c56063b,
         type: 3}
       propertyPath: m_LocalPosition.x

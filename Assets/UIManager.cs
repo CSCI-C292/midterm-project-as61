@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     public Button button01;
 
     // Start is called before the first frame update
+
+    
     
     void Start()
     {
@@ -22,7 +24,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    void playClicked()
+    public void playClicked()
     {
         SceneManager.LoadScene("Midterm Project");
     }

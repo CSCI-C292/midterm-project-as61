@@ -6,7 +6,8 @@ public class Platform : MonoBehaviour
 {
 
     [SerializeField] public float bounceFactor = 10f;
-    [SerializeField] public float difficulty = 10f;
+    [SerializeField] public float collectorDistanceFromPlayer = -3f;
+    
    // [SerializeField] 
     GameObject player;
     Animator anim;
@@ -38,5 +39,10 @@ public class Platform : MonoBehaviour
         anim = player.GetComponent<Animator>();
 
 
+    }
+    void Update()
+    {
+        if ((transform.position.y - player.transform.position.y) <= collectorDistanceFromPlayer)
+        Destroy(gameObject);
     }
 }
