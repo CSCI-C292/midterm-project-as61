@@ -119,7 +119,7 @@ MonoBehaviour:
   bounceFactor: 10
   _moveSpeed: 20
   collectorDistanceFromPlayer: -5
-  warningScreechDistance: 9
+  warningScreechDistance: 8
 --- !u!82 &5551218725294897303
 AudioSource:
   m_ObjectHideFlags: 0
