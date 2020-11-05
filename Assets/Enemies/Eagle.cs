@@ -11,8 +11,7 @@ public class Eagle : MonoBehaviour
     [SerializeField] public float warningScreechDistance;
     GameObject player;
 
-    float _xMin;
-    float _xMax;
+   
    
 
     
@@ -20,8 +19,7 @@ public class Eagle : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        _xMin = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
-        _xMax = UnityEngine.Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
+        
     }
 
     void SetTransformX(float n)
@@ -29,6 +27,8 @@ public class Eagle : MonoBehaviour
         transform.position = new Vector3(n, transform.position.y, transform.position.z);
     }
 
+    bool _play = true;
+    
     void Update()
     {
         if ((transform.position.y - player.transform.position.y) <= collectorDistanceFromPlayer){
@@ -47,14 +47,7 @@ public class Eagle : MonoBehaviour
             Debug.Log(dist);
         }
 
-        transform.position += new Vector3(Time.deltaTime * _moveSpeed, 0, 0);
-
-        if (transform.position.x < _xMin){
-            SetTransformX(_xMax);
-         }
-        if (transform.position.x > _xMax){
-            SetTransformX(_xMin);
-         }
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -80,7 +73,7 @@ public class Eagle : MonoBehaviour
     {
         screechSource = GetComponent<AudioSource>();
     }
-    bool _play = true;
+    
     // Update is called once per frame
     
 }
