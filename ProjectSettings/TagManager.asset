@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Eagle
   - RestartMenu
+  - WinScreen
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-
+    public AudioSource whooshSource;
     [SerializeField] public float bounceFactor = 10f;
     [SerializeField] public float collectorDistanceFromPlayer = -3f;
     
@@ -30,6 +30,9 @@ public class Platform : MonoBehaviour
             //     // GameObject.Find
             //     k = true;
             // }
+            whooshSource.Play();
+
+
            
         }
     }
@@ -37,6 +40,7 @@ public class Platform : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         anim = player.GetComponent<Animator>();
+        whooshSource = GetComponent<AudioSource>();
 
 
     }
